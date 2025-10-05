@@ -40,10 +40,9 @@ app.get('/', (req, res) => {
 });
 
 const PORT = process.env.PORT || 3001;
-const HOST = process.env.HOST || '0.0.0.0'; // Listen on all interfaces for LAN access
+const HOST = process.env.HOST || 'http://localhost'; // Listen on all interfaces for LAN access
 
 app.listen(PORT, HOST, () => {
   console.log(`🚀 Queue Management API Server running on ${HOST}:${PORT}`);
-  console.log(`📱 LAN Access: http://[YOUR-IP]:${PORT}`);
-  console.log(`🏥 Health Check: http://[YOUR-IP]:${PORT}/api/queue/health`);
+  console.log(`🏥 Health Check: ${HOST}:${PORT}/api/queue/health`);
 });
